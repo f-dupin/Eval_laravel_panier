@@ -14,7 +14,7 @@ class CreatePlatIngredientsTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('plat_ingredients', function (Blueprint $table) {
+        Schema::create('plat_ingredient', function (Blueprint $table) {
             $table->integer('id_ingredient')->unsigned();
             $table->integer('id_plat')->unsigned();
             $table->foreign('id_ingredient')
@@ -37,6 +37,6 @@ class CreatePlatIngredientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plat_ingredients');
+        Schema::dropIfExists('plat_ingredient');
     }
 }

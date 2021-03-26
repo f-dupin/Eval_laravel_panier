@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\plat_ingredients;
+use App\Models\plat_ingredient;
 use Illuminate\Http\Request;
 use App\Models\ingredient;
 

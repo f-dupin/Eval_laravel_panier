@@ -18,6 +18,7 @@ class plat extends Controller
 
         $Ingredients = ingredient::all();
         $Origines = origine::all();
+        //var_dump(compact('Origines'));
         return view('dashboard', compact('Ingredients', 'Origines'));
 
     }
