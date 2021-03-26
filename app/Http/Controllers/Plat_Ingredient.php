@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\plat_ingredients;
 use Illuminate\Http\Request;
-use App\Models\ingredient;
 
-class IngredientController extends Controller
+class Plat_Ingredient extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +13,10 @@ class IngredientController extends Controller
      */
     public function index()
     {
-
+        $slug = $_GET['ingredient'];
+        $ingredient = \App\Models\plat_ingredients::where('id_ingredient',$slug)->get();
+        var_dump(compact($ingredient));
+        //return view('index', compact('ingredient');
     }
 
     /**
@@ -47,7 +48,7 @@ class IngredientController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**

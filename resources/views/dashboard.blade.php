@@ -1,5 +1,5 @@
 <x-app-layout>
-    <form action="/rechercheIngredient" method="POST">
+    <form action="/rechercheIngredient/" method="GET">
         <label for="ingredient">Liste des plats contenant l'ingredient suivant : </label>
         <select name="ingredient" id="ingredient-select">
             @foreach($Ingredients as $ingredient)

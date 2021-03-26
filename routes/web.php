@@ -13,21 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 use App\Http\Controllers\plat;
-use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\Plat_Ingredient;
 
-Route::middleware('auth')->group(function () {
-    Route::get('/', function ()    {
-        // Réservé aux utilisateurs authentifiés
-    });
-    Route::get('comptes', function () {
-        // Réservé aux utilisateurs authentifiés
-    });
-});
+
 
 
 Route::resource('plat', plat::class);
-Route::get('/', [\App\Http\Controllers\plat::class, 'index'])->name('dashboard');
-Route::post('/rechercheIngredient', [\App\Http\Controllers\IngredientController::class, 'index']);
-/*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');*/
+
+Route::get('/rechercheIngredient', [\App\Http\Controllers\Plat_Ingredient::class, 'index']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/', [\App\Http\Controllers\plat::class, 'index'])->name('dashboard');

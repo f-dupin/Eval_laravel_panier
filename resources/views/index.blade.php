@@ -1,5 +1,3 @@
 <x-app-layout>
-    @foreach($ingredients as $ingredient)
-        <p>coucou</p>
-    @endforeach
+    <p>Coucou les ptits lou</p>
 </x-app-layout>
