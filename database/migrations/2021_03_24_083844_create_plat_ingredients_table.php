@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaniersTable extends Migration
+class CreatePlatIngredientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,18 +14,17 @@ class CreatePaniersTable extends Migration
     public function up()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::create('paniers', function (Blueprint $table) {
-            $table->integer('id_personne')->unsigned();
+        Schema::create('plat_ingredients', function (Blueprint $table) {
+            $table->integer('id_ingredient')->unsigned();
             $table->integer('id_plat')->unsigned();
-            $table->integer('quantite');
+            $table->foreign('id_ingredient')
+                ->references('id_ingredient')
+                ->on('ingredients')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
             $table->foreign('id_plat')
                 ->references('id_plat')
                 ->on('plats')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
-            $table->foreign('id_personne')
-                ->references('id')
-                ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -38,6 +37,6 @@ class CreatePaniersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paniers');
+        Schema::dropIfExists('plat_ingredients');
     }
 }

@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class panier extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['id_personne', 'id_plat', 'quantite'];
 }

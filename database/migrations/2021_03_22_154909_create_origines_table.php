@@ -13,9 +13,11 @@ class CreateOriginesTable extends Migration
      */
     public function up()
     {
-        Schema::create('origines', function (Blueprint $table) {
-            $table->id('id_origine');
+        Schema::disableForeignKeyConstraints();
+        Schema::create('origine', function (Blueprint $table) {
+            $table->increments('id_origine');
             $table->string('libelle');
+
         });
     }
 
@@ -26,6 +28,6 @@ class CreateOriginesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('origines');
+        Schema::dropIfExists('origine');
     }
 }

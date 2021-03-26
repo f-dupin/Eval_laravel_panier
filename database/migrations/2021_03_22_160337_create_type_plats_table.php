@@ -13,8 +13,9 @@ class CreateTypePlatsTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('type_plats', function (Blueprint $table) {
-            $table->id('id_type_plat');
+            $table->increments('id_type_plat');
             $table->string('libelle');
         });
     }

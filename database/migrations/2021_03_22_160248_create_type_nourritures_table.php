@@ -13,8 +13,9 @@ class CreateTypeNourrituresTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('type_nourritures', function (Blueprint $table) {
-            $table->id('id_type_nourriture');
+            $table->increments('id_type_nourriture');
             $table->string('libelle');
         });
     }

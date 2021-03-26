@@ -13,8 +13,9 @@ class CreateIngredientsTable extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('ingredients', function (Blueprint $table) {
-            $table->id('id_ingredient');
+            $table->increments('id_ingredient');
             $table->string('libelle');
         });
     }
