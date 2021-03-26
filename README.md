@@ -1,7 +1,11 @@
 # Eval_laravel_panier
 Evaluation du 22/03/2021
 
-demarrer le projet en ouvrant la cmd , se placer dans le projet laravel et executer la commande php artisan serve 
+
+demarrer le projet en ouvrant la cmd , se placer dans le projet laravel et executer les commandes suivante
+ - composer install 
+ - npm install
+ - php artisan serve
 
 Si l'erreur failed to open stream: Permission denied apparait 
  - Allez dans la console dans le projet laravel
